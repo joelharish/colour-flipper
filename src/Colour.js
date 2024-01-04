@@ -1,14 +1,16 @@
 import React from 'react'
 import './index.css'
 
-const Colour = () => {
+const Colour = ({colour, handleClick}) => {
   return (
-    <div className='container'>
+    <>
+      <div className='container' style={{backgroundColor: `${colour}`}}></div>
       <div className='middleContent'>
-        <h2>Colour : </h2>
+        <h2>Colour : {colour}</h2>
       </div>
-      <button>Flip</button>
-    </div>
+      <button onClick={handleClick}>Flip</button>
+    </>
+    
   )
 }
 

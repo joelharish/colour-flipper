@@ -281,10 +281,15 @@ const colourCodes = [
 
 function App() {
 
-  const [changeColour, setChangeColour] = useState(colourCodes[1])
+  const [changeColour, setChangeColour] = useState(colourCodes[0])
+
+  const handleClick = () => {
+    let randColour = Math.floor(Math.random() * colourCodes.length)
+    setChangeColour(colourCodes[randColour])
+  }
 
   return (
-    <Colour/>
+    <Colour colour = {changeColour} handleClick = {handleClick}/>
   );
 }
 
